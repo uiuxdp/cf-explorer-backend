@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "feedback_items",
+  "info": {
+    "singularName": "feedback-item",
+    "pluralName": "feedback-items",
+    "displayName": "FeedbackItem",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    }
+  }
+}
