@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_iframes",
+  "info": {
+    "displayName": "Iframe"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "link": {
+      "type": "string"
+    },
+    "width": {
+      "type": "integer"
+    },
+    "height": {
+      "type": "integer"
+    }
+  }
+}

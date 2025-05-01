@@ -1,5 +1,19 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SharedIframe extends Struct.ComponentSchema {
+  collectionName: 'components_shared_iframes';
+  info: {
+    displayName: 'Iframe';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    height: Schema.Attribute.Integer;
+    link: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    width: Schema.Attribute.Integer;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -73,6 +87,7 @@ export interface SharedYear extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.iframe': SharedIframe;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

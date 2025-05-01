@@ -515,9 +515,11 @@ export interface ApiFeedbackItemFeedbackItem
     draftAndPublish: true;
   };
   attributes: {
+    additionalPrompt: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    insights: Schema.Attribute.DynamicZone<['shared.iframe']>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -525,11 +527,18 @@ export interface ApiFeedbackItemFeedbackItem
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'title'>;
+    quarter: Schema.Attribute.Enumeration<['q1', 'q2', 'q3', 'q4']> &
+      Schema.Attribute.Required;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    source: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    year: Schema.Attribute.Enumeration<
+      ['y2021', 'y2022', 'y2023', 'y2024', 'y2025']
+    > &
+      Schema.Attribute.Required;
   };
 }
 

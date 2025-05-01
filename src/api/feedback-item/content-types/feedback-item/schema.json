@@ -16,7 +16,49 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "title"
+      "targetField": "title",
+      "required": true
+    },
+    "source": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "year": {
+      "type": "enumeration",
+      "enum": [
+        "y2021",
+        "y2022",
+        "y2023",
+        "y2024",
+        "y2025"
+      ],
+      "required": true
+    },
+    "quarter": {
+      "type": "enumeration",
+      "enum": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ],
+      "required": true
+    },
+    "additionalPrompt": {
+      "type": "text"
+    },
+    "insights": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.iframe"
+      ]
     }
   }
 }
